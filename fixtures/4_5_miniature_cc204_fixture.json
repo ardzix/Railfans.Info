@@ -1,0 +1,38 @@
+[
+    {
+        "model": "miniatures.miniature",
+        "pk": 4,
+        "fields": {
+            "name": "CC204 KAI Biru",
+            "category": "locomotive",
+            "year_of_production": "1995",
+            "era_livery": "Biru Strip Putih",
+            "visual_characteristics": "Sleek diesel-electric locomotive with classic blue stripe livery, enhanced with dynamic brakes and full-length side panels.",
+            "technical_characteristics": "Diesel-Electric Locomotive, General Motors Electro-Motive Division, EMD 16-645F3B prime mover, Co-Co wheel arrangement, dynamic braking system, 2,150 horsepower, max speed 120 km/h.",
+            "article": "Introduced during the mid-1990s, the CC204 class marked a leap forward for Indonesia\u2019s mainline locomotive fleet. Manufactured by General Motors\u2019 EMD division, the CC204 built upon the strengths of the earlier CC203s by adding dynamic braking systems, allowing superior speed control when traversing mountainous terrain.\n\nSporting a striking blue-and-white livery, the CC204 locomotives exuded a more modern, professional image that resonated with PT Kereta Api\u2019s renewed ambition to compete with road transport.\n\nTechnically, the locomotives utilized the powerful 16-cylinder 645F3B engines, pushing 2,150 horsepower to all six driven axles. This made them ideal for hauling fast passenger trains like Argo Bromo Anggrek, as well as heavy freights across Java\u2019s long stretches.\n\nService life saw CC204s dominate premier executive routes for over a decade, revered for their reliability and strong hill-climbing capabilities.\n\nTrivia: Enthusiasts often refer to CC204s as 'Prajurit Biru' (Blue Soldiers) because of their dominant presence in high-profile services and their distinctive color scheme.",
+            "history": "The CC204 series served as a critical bridge between Indonesia\u2019s early dieselization efforts and the modern era, maintaining high reliability rates until the gradual fleet rejuvenation campaigns of the 2010s.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc204-kai-biru",
+            "qr_code": null
+        }
+    },
+    {
+        "model": "miniatures.miniature",
+        "pk": 5,
+        "fields": {
+            "name": "CC204 KAI Putih 2011",
+            "category": "locomotive",
+            "year_of_production": "2011",
+            "era_livery": "Putih-Biru",
+            "visual_characteristics": "Refreshed diesel-electric locomotive with white and blue modern PT KAI branding, reflecting post-2011 corporate revitalization.",
+            "technical_characteristics": "Diesel-Electric Locomotive, EMD 16-645F3B prime mover, dynamic braking system, Co-Co wheel arrangement, 2,150 horsepower output.",
+            "article": "As part of the 2011 corporate rebranding campaign, PT Kereta Api Indonesia updated the liveries of its workhorse fleets, including the venerable CC204 locomotives. The new white base color with elegant blue accents symbolized a cleaner, more customer-oriented image, distancing the company from its previous bureaucratic past.\n\nAlthough no major mechanical changes were made, the revamped appearance rejuvenated the perception of these machines among passengers and railway staff alike.\n\nThe CC204 KAI Putih units continued to haul a variety of services, ranging from fast intercity expresses to premium freight movements requiring reliable traction.\n\nRailfans appreciated the clean looks of the updated livery, often photographing the white CC204s alongside modern KAI rolling stock, bridging the old and the new generations of Indonesian rail travel.\n\nTrivia: Some CC204 KAI Putih units were affectionately called 'White Knights' by enthusiasts, recognizing their veteran status combined with their noble refreshed appearance.",
+            "history": "Despite newer locomotives entering the fleet, many CC204 KAI Putih units remained frontline soldiers on Java\u2019s railways, testament to their rugged design and continued maintenance support.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc204-kai-putih-2011",
+            "qr_code": null
+        }
+    }
+]

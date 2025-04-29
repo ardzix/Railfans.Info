@@ -34,10 +34,10 @@ ENV PYTHONPATH=/usr/src/app
 # Collect static files
 RUN python manage.py collectstatic --noinput
 
-# Set proper permissions
-RUN chown -R www-data:www-data /usr/src/app /var/log/uwsgi
-RUN chmod -R 755 /usr/src/app
-
+# Create uwsgi log directory and set proper permissions
+RUN mkdir -p /var/log/uwsgi && \
+    chown -R www-data:www-data /usr/src/app /var/log/uwsgi && \
+    chmod -R 755 /usr/src/app
 
 # Expose port for uWSGI/Django
 EXPOSE 8001
