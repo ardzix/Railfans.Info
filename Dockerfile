@@ -29,16 +29,16 @@ RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 RUN pip install --no-cache-dir uwsgi
 
 # Copy the application code into the container
-COPY project/ /usr/src/app/project/
-RUN ls -la /usr/src/app/project/
+COPY . /usr/src/app/
+RUN ls -la /usr/src/app/
 
 # Set environment variables
 ENV DJANGO_SETTINGS_MODULE=project.settings
 ENV PYTHONUNBUFFERED=1
-ENV PYTHONPATH=/usr/src/app/project
+ENV PYTHONPATH=/usr/src/app
 
 # Collect static files
-RUN cd /usr/src/app/project && python manage.py collectstatic --noinput
+RUN python manage.py collectstatic --noinput
 
 # Set proper permissions
 RUN chown -R www-data:www-data /usr/src/app/project /var/log/uwsgi
