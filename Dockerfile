@@ -15,8 +15,8 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     supervisor \
     curl \
+    netcat \
     && apt-get clean && rm -rf /var/lib/apt/lists/* 
-
 
 # Copy the requirements file into the container
 COPY requirements.txt /usr/src/app/
@@ -31,20 +31,23 @@ ENV DJANGO_SETTINGS_MODULE=project.settings
 ENV PYTHONUNBUFFERED=1
 ENV PYTHONPATH=/usr/src/app
 
-# Collect static files
-RUN python manage.py collectstatic --noinput
+# Create necessary directories
+RUN mkdir -p /usr/src/app/static /usr/src/app/staticfiles /usr/src/app/media /var/log/uwsgi
 
-# Create uwsgi log directory and set proper permissions
-RUN mkdir -p /var/log/uwsgi && \
-    chown -R www-data:www-data /usr/src/app /var/log/uwsgi && \
+# Set proper permissions
+RUN chown -R www-data:www-data /usr/src/app /var/log/uwsgi && \
     chmod -R 755 /usr/src/app
-
-# Expose port for uWSGI/Django
-EXPOSE 8001
 
 # Create supervisor directory and copy configuration
 RUN mkdir -p /etc/supervisor/conf.d
 COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+
+# Make entrypoint script executable
+COPY entrypoint.sh /usr/src/app/
+RUN chmod +x /usr/src/app/entrypoint.sh
+
+# Set the entrypoint
+ENTRYPOINT ["/usr/src/app/entrypoint.sh"]
 
 # Run Supervisor to manage processes
 CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/conf.d/supervisord.conf"] 
