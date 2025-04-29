@@ -21,11 +21,11 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /usr/src/app/project /var/log/uwsgi /usr/src/app/project/static /usr/src/app/project/media
 
 # Copy the requirements file into the container
-COPY project/requirements.txt /usr/src/app/project/
-RUN ls -la /usr/src/app/project/requirements.txt
+COPY requirements.txt /usr/src/app/
+RUN ls -la /usr/src/app/requirements.txt
 
 # Install Python dependencies with binary wheels
-RUN pip install --no-cache-dir -r /usr/src/app/project/requirements.txt
+RUN pip install --no-cache-dir -r /usr/src/app/requirements.txt
 RUN pip install --no-cache-dir uwsgi
 
 # Copy the application code into the container
@@ -46,7 +46,7 @@ RUN chmod -R 755 /usr/src/app/project
 
 # Create supervisor directory and copy configuration
 RUN mkdir -p /etc/supervisor/conf.d
-COPY project/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN ls -la /etc/supervisor/conf.d/supervisord.conf
 
 # Run Supervisor to manage processes
