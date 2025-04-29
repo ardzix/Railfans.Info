@@ -1,0 +1,20 @@
+[
+    {
+        "model": "miniatures.miniature",
+        "pk": 2,
+        "fields": {
+            "name": "CC206 KAI 2020",
+            "category": "locomotive",
+            "year_of_production": "2020",
+            "era_livery": "Putih-Oranye",
+            "visual_characteristics": "Dual-cab diesel-electric locomotive with bold orange-white PT KAI corporate branding, symbolizing innovation and revitalized service commitment.",
+            "technical_characteristics": "Diesel-Electric Locomotive built by General Electric (C20EMP model), featuring AC traction motors, Co-Co wheel arrangement, 2,250 horsepower output, maximum speed of 120 km/h.",
+            "article": "In 2020, PT Kereta Api Indonesia (KAI) launched a comprehensive corporate rebranding effort, aiming to establish itself as a leading railway operator in Southeast Asia. As part of this initiative, the CC206 series locomotives were repainted from their earlier blue-white scheme into a vibrant combination of white and orange. This striking new livery quickly became a symbol of modernization, dynamism, and KAI\u2019s renewed customer-oriented mission.\n\nWhile structurally and mechanically identical to the 2012 version, the CC206 KAI 2020 units carried a fresh aura. The new orange band flowing across the body sides, combined with a sleek white base, made the locomotives appear faster and more aggressive, even while standing still. Passengers and railway enthusiasts alike praised the fresh look, noting that it matched Indonesia\u2019s growing momentum toward world-class railway standards.\n\nTechnically, the CC206 KAI 2020 continued to deliver the high performance expected from the General Electric C20EMP platform: AC traction motors, Co-Co wheel arrangement, reliable tractive effort, and enhanced operator ergonomics thanks to dual-cab control.\n\nIn service, these locomotives became prominent figures hauling premier passenger trains like Argo Bromo Anggrek and Gajayana, as well as managing heavy container freights linking Jakarta\u2019s ports to key inland terminals. Their high reliability rates helped boost KAI\u2019s on-time performance ratings, especially during the post-pandemic railway revival period.\n\nTrivia: Some Indonesian railfans nicknamed the CC206 KAI 2020 units as 'Singa Oranye' or 'Orange Lions', a playful nod to their bright colors and the roaring power of their 2,250 HP diesel engines, often heard echoing along Java\u2019s mountainous tracks.",
+            "history": "The adoption of the orange-white livery starting in 2020 signaled KAI\u2019s determination to modernize not just operationally, but also in terms of corporate identity. Today, the sight of a gleaming orange CC206 leading long-distance trains has become a familiar and proud emblem of Indonesia\u2019s railway renaissance.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc206-kai-2020",
+            "qr_code": null
+        }
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "model": "miniatures.miniature",
+        "pk": 1,
+        "fields": {
+            "name": "CC206 KAI 2012",
+            "category": "locomotive",
+            "year_of_production": "2012",
+            "era_livery": "Putih-Biru",
+            "visual_characteristics": "Dual-cab diesel-electric locomotive with blue and white PT KAI corporate livery, symbolizing modernization and professionalism.",
+            "technical_characteristics": "Diesel-Electric Locomotive built by General Electric (C20EMP model), featuring AC traction motors, Co-Co wheel arrangement, 2,250 horsepower output, maximum speed of 120 km/h.",
+            "article": "Introduced in 2012, the CC206 marked a groundbreaking shift in Indonesia\u2019s railway modernization journey. Built by General Electric, the CC206 was Indonesia\u2019s first major adoption of dual-cab diesel-electric locomotives, replacing the aging fleets of single-cab units like the CC201 and CC202. The twin-cab design dramatically improved operational flexibility, especially on routes requiring frequent directional changes.\n\nThe CC206 KAI 2012 wears the clean white-and-blue livery representing the rebranded PT Kereta Api Indonesia identity. This color scheme became synonymous with reliability and a renewed commitment to public service after a period of stagnation in the early 2000s.\n\nTechnically, the CC206 boasts AC traction motors allowing better adhesion on slippery tracks, improved fuel efficiency, and reduced maintenance requirements compared to its DC predecessors. It employs the GE C20EMP platform, a tailored solution for Indonesia\u2019s 3 ft 6 in (1,067 mm) narrow gauge network.\n\nInitially deployed across Java\u2019s busy north-south corridors, the CC206 quickly became the workhorse for premier passenger services like Argo Bromo Anggrek, as well as critical freight operations including container trains and petroleum transport. Its dual-cab layout was especially praised by engineers for reducing turnaround times at terminal stations.\n\nTrivia: Enthusiasts often refer to CC206s as 'Bima' units, inspired by their use in Bima Express services, although today their assignment has expanded to almost all sectors across Java and parts of Sumatra.",
+            "history": "The arrival of the CC206 fleet in 2012 was part of a broader effort to revive the national rail company\u2019s reputation and efficiency. Over 100 units were ordered and progressively deployed. Their performance reliability led to increased train punctuality and passenger satisfaction, cementing CC206's role as a pillar of modern Indonesian railway operations.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc206-kai-2012",
+            "qr_code": null
+        }
+    }
+]

@@ -1,0 +1,20 @@
+[
+    {
+        "model": "miniatures.miniature",
+        "pk": 3,
+        "fields": {
+            "name": "CC205 Bukit Asam",
+            "category": "locomotive",
+            "year_of_production": "2011",
+            "era_livery": "Putih-Biru-Oranye",
+            "visual_characteristics": "Massive diesel-electric freight locomotive with heavy-set body, bold white-blue-orange PT KAI (Divre III) livery, and distinctive twin cab design optimized for coal hauling.",
+            "technical_characteristics": "Diesel-Electric Locomotive built by General Electric (AC44i platform), AC traction motors, Co-Co wheel arrangement, 4,500 horsepower, heavy haul optimized, dynamic braking system.",
+            "article": "The CC205 class, often regarded as the muscle of Indonesia\u2019s freight operations, was introduced around 2011 to bolster the logistics capabilities of South Sumatra\u2019s coal corridors. Built by GE Transportation and based on the AC44i platform, the CC205 was Indonesia\u2019s first true heavy-haul diesel locomotive using AC traction technology.\n\nUnlike the older CC202s and CC203s, which relied on DC traction motors, the CC205\u2019s AC traction enabled superior adhesion and hauling capability under extreme conditions. With an impressive 4,500 horsepower output and Co-Co wheel configuration, these locomotives were specifically engineered to pull kilometer-long coal trains across Sumatra\u2019s challenging terrains.\n\nVisually, the CC205 is imposing. Its long frame, powerful dynamic brakes, and dual-cab configuration are painted in a striking white-blue-orange scheme symbolizing PT KAI\u2019s commitment to modernization.\n\nIn daily operations, CC205s are mostly deployed along the Tanjung Enim\u2013Tarahan corridor, transporting millions of tons of coal annually. Their reliability has drastically increased freight volumes and reduced delays previously caused by older equipment breakdowns.\n\nTrivia: Railfans often nickname the CC205 units as 'Kerbau Besi' or 'Iron Buffaloes' due to their strength and relentless working schedules hauling coal under punishing tropical conditions.",
+            "history": "The deployment of CC205 units marked the beginning of Indonesia\u2019s heavy-haul railway era. With continuous upgrades and training, PT KAI\u2019s Divre III South Sumatra division achieved record coal transport figures, driven by the unmatched hauling power and rugged durability of the CC205 fleet.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc205-bukit-asam",
+            "qr_code": null
+        }
+    }
+]
