@@ -4,14 +4,18 @@ FROM python:3.11-slim-buster
 # Set the working directory in the container
 WORKDIR /usr/src/app
 
-# Install system dependencies
+# Install system dependencies for building Python libraries
 RUN apt-get update && apt-get install -y \
-    nginx \
-    supervisor \
     build-essential \
     python3-dev \
     libpq-dev \
-    && rm -rf /var/lib/apt/lists/*
+    libpcre3 \
+    libpcre3-dev \
+    libssl-dev \
+    libffi-dev \
+    supervisor \
+    curl \
+    && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
 # Create necessary directories
 RUN mkdir -p /usr/src/app/railfans-info /var/log/uwsgi /usr/src/app/railfans-info/static /usr/src/app/railfans-info/media

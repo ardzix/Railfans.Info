@@ -1,0 +1,38 @@
+[
+    {
+        "model": "miniatures.miniature",
+        "pk": 6,
+        "fields": {
+            "name": "CC203 KAI Biru",
+            "category": "locomotive",
+            "year_of_production": "1992",
+            "era_livery": "Biru Strip Putih",
+            "visual_characteristics": "Streamlined diesel-electric locomotive with vivid blue and white corporate livery, aerodynamic cab shape, and classic long hood configuration.",
+            "technical_characteristics": "Diesel-Electric Locomotive, General Motors EMD GT26MC-2U, EMD 16-645E3 prime mover, Co-Co wheel arrangement, 2,150 horsepower, max speed 120 km/h.",
+            "article": "Introduced in the early 1990s, the CC203 class revolutionized Indonesia\u2019s mainline operations with a blend of speed, power, and style. Built by General Motors Electro-Motive Division, the CC203 locomotives were based on the proven GT26MC-2U platform, well-suited to Indonesia\u2019s narrow gauge system.\n\nSporting a bright blue-and-white livery symbolizing progress and reliability, these locomotives quickly became the pride of PT Kereta Api Indonesia\u2019s growing fleet. Their distinctive aerodynamic cab design distinguished them visually from earlier models like the CC201.\n\nPowered by the robust 16-cylinder EMD 645E3 engine, CC203s delivered 2,150 horsepower to all six axles, providing excellent acceleration and hill-climbing performance, ideal for Java\u2019s mixed terrain.\n\nThroughout the 1990s and early 2000s, CC203s led Indonesia\u2019s premier services including the Argo Bromo Anggrek, Argo Wilis, and Senja Utama, earning a reputation for speed, comfort, and reliability.\n\nTrivia: Railfans often call the CC203s 'Sang Pelari' (The Sprinter) due to their sleek shape and fast performance compared to older locomotives.",
+            "history": "The CC203 series marked a modernization era for Indonesia\u2019s railways, remaining a vital part of the fleet even as newer models arrived in the late 2000s.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc203-kai-biru",
+            "qr_code": null
+        }
+    },
+    {
+        "model": "miniatures.miniature",
+        "pk": 7,
+        "fields": {
+            "name": "CC203 KAI Putih 2011",
+            "category": "locomotive",
+            "year_of_production": "2011",
+            "era_livery": "Putih-Biru",
+            "visual_characteristics": "Updated blue and white corporate livery reflecting PT KAI's post-2011 brand refresh, maintaining the classic long hood and aerodynamic cab.",
+            "technical_characteristics": "Diesel-Electric Locomotive, General Motors EMD GT26MC-2U platform, EMD 16-645E3 engine, 2,150 horsepower, Co-Co wheel arrangement.",
+            "article": "In 2011, PT Kereta Api Indonesia underwent a sweeping rebranding effort aimed at reshaping its public image, and part of this initiative included updating the liveries of its aging yet reliable CC203 fleet. The once dominant blue tone was replaced with a clean white base accented by blue and orange highlights, signaling a new era of professionalism and customer service.\n\nMechanically, the CC203s remained faithful to their original EMD specifications, continuing to deliver strong tractive performance for both premier passenger trains and high-priority freight.\n\nToday, many CC203s bearing the white livery continue to soldier on across Java, often working side by side with newer CC206s.\n\nRailfans appreciate the juxtaposition of the old and new styles, often capturing images of these locomotives still proudly carrying passengers and freight through Indonesia\u2019s varied landscapes.\n\nTrivia: Some enthusiasts affectionately call the white-liveried CC203s 'Veteran Pelari' (The Veteran Sprinters) acknowledging their continued resilience in active service.",
+            "history": "Despite approaching three decades in service, the CC203 KAI Putih units remain essential to PT KAI\u2019s daily operations, a testament to their rugged design and capable maintenance programs.",
+            "thumbnail": null,
+            "main_image": null,
+            "slug": "cc203-kai-putih-2011",
+            "qr_code": null
+        }
+    }
+]
