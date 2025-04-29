@@ -3,7 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
     <title>{% block title %}Indonesian Miniature Trains{% endblock %}</title>
+    <meta name="title" content="{% block meta_title %}Indonesian Miniature Trains - Railfans.info{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Comprehensive encyclopedia of Indonesian miniature trains, featuring detailed information, specifications, and galleries of various train models.{% endblock %}">
+    <meta name="keywords" content="indonesian trains, miniature trains, train models, railfans, indonesian railways, train collection">
+    <meta name="author" content="Railfans.info">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{% block og_url %}https://railfans.info/{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Indonesian Miniature Trains - Railfans.info{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}Comprehensive encyclopedia of Indonesian miniature trains, featuring detailed information, specifications, and galleries of various train models.{% endblock %}">
+    <meta property="og:image" content="{% block og_image %}https://railfans.info/static/images/og-image.jpg{% endblock %}">
+    <meta property="og:site_name" content="Railfans.info">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{% block twitter_url %}https://railfans.info/{% endblock %}">
+    <meta property="twitter:title" content="{% block twitter_title %}Indonesian Miniature Trains - Railfans.info{% endblock %}">
+    <meta property="twitter:description" content="{% block twitter_description %}Comprehensive encyclopedia of Indonesian miniature trains, featuring detailed information, specifications, and galleries of various train models.{% endblock %}">
+    <meta property="twitter:image" content="{% block twitter_image %}https://railfans.info/static/images/twitter-image.jpg{% endblock %}">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/static/favicon/site.webmanifest">
+    <link rel="mask-icon" href="/static/favicon/safari-pinned-tab.svg" color="#0071e3">
+    <meta name="msapplication-TileColor" content="#0071e3">
+    <meta name="theme-color" content="#ffffff">
+    
+    <!-- Additional Meta Tags -->
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="Django">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{% block canonical_url %}https://railfans.info/{% endblock %}">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script>
