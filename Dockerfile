@@ -17,18 +17,12 @@ RUN apt-get update && apt-get install -y \
 RUN mkdir -p /usr/src/app/railfans-info /var/log/uwsgi /usr/src/app/railfans-info/static /usr/src/app/railfans-info/media
 
 
-# Copy the requirements file into the container
-COPY railfans-info/requirements.txt /usr/src/app/railfans-info/
-RUN ls -la /usr/src/app/railfans-info/requirements.txt
+# Copy code to the container
+COPY . /usr/src/app/railfans-info/
 
 # Install Python dependencies with binary wheels
 RUN pip install --no-cache-dir -r /usr/src/app/railfans-info/requirements.txt
 RUN pip install --no-cache-dir uwsgi
-
-# Copy the application code into the container
-COPY railfans-info/ /usr/src/app/railfans-info/
-RUN ls -la /usr/src/app/railfans-info/
-
 
 # Set environment variables
 ENV DJANGO_SETTINGS_MODULE=project.settings
@@ -47,7 +41,7 @@ EXPOSE 8001
 
 # Create supervisor directory and copy configuration
 RUN mkdir -p /etc/supervisor/conf.d
-COPY railfans-info/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 RUN ls -la /etc/supervisor/conf.d/supervisord.conf
 
 # Run Supervisor to manage processes
