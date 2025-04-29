@@ -1,32 +1,38 @@
 {% extends "base.html" %}
 
-{% block title %}Indonesian Miniature Trains - Home{% endblock %}
+{% block title %}Indonesian Miniature Trains Collection | Railfans.info{% endblock %}
+
+{% block meta_title %}Indonesian Miniature Trains Collection - Comprehensive Database | Railfans.info{% endblock %}
+
+{% block meta_description %}Explore our extensive collection of Indonesian miniature trains. Detailed information, specifications, and high-quality images of various train models from Indonesia's rich railway history. Perfect for collectors and enthusiasts.{% endblock %}
 
 {% block content %}
 <div class="space-y-16">
     <!-- Hero Section -->
     <div class="text-center space-y-6">
         <h1 class="text-4xl md:text-5xl font-semibold text-apple-dark dark:text-white tracking-tight">
-            Indonesian Miniature Trains
+            Indonesian Miniature Trains Collection
         </h1>
         <p class="max-w-3xl mx-auto text-lg text-gray-600 dark:text-gray-300">
-            Explore our collection of meticulously detailed miniature trains from across Indonesia's rich railway history.
+            Explore our comprehensive collection of meticulously detailed miniature trains from across Indonesia's rich railway history. Perfect for collectors, enthusiasts, and railway history researchers.
         </p>
     </div>
 
     <!-- Search Bar -->
     <div class="max-w-2xl mx-auto">
-        <form method="get" class="flex gap-2">
+        <form method="get" class="flex gap-2" role="search" aria-label="Search miniature trains">
             <input 
                 type="text" 
                 name="search" 
                 value="{{ search_query }}"
-                placeholder="Search miniatures..." 
+                placeholder="Search miniature trains..." 
                 class="flex-1 rounded-xl border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800 text-apple-dark dark:text-white shadow-sm focus:border-apple-blue focus:ring-apple-blue px-4 py-3"
+                aria-label="Search input"
             >
             <button 
                 type="submit"
                 class="px-5 py-3 bg-apple-blue text-white rounded-xl hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-apple-blue focus:ring-offset-2 transition-colors duration-200 font-medium"
+                aria-label="Submit search"
             >
                 Search
             </button>
@@ -36,14 +42,15 @@
     <!-- Miniatures Grid -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
         {% for miniature in miniatures %}
-        <a href="{% url 'miniature_detail' miniature.slug %}" class="group">
+        <a href="{% url 'miniature_detail' miniature.slug %}" class="group" aria-label="View details for {{ miniature.name }}">
             <div class="bg-white dark:bg-apple-darkgray rounded-2xl shadow-sm dark:shadow-gray-900/10 overflow-hidden transition-all duration-300 group-hover:shadow-md group-hover:scale-[1.02]">
                 <div class="aspect-w-4 aspect-h-3 overflow-hidden">
                     {% if miniature.thumbnail %}
                         <img 
                             src="{{ miniature.thumbnail.url }}" 
-                            alt="{{ miniature.name }}"
+                            alt="{{ miniature.name }} - {{ miniature.category }} miniature train"
                             class="w-full h-full object-cover transform transition-transform duration-500 group-hover:scale-105"
+                            loading="lazy"
                         >
                     {% else %}
                         <div class="w-full h-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center">
@@ -54,9 +61,9 @@
                     {% endif %}
                 </div>
                 <div class="p-5 space-y-3">
-                    <h3 class="text-lg font-semibold text-apple-dark dark:text-white group-hover:text-apple-blue dark:group-hover:text-apple-blue transition-colors duration-200">
+                    <h2 class="text-lg font-semibold text-apple-dark dark:text-white group-hover:text-apple-blue dark:group-hover:text-apple-blue transition-colors duration-200">
                         {{ miniature.name }}
-                    </h3>
+                    </h2>
                     <div class="flex flex-wrap items-center gap-2">
                         <span class="px-3 py-1 text-xs font-medium bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full">
                             {{ miniature.category }}
@@ -78,4 +85,33 @@
         {% endfor %}
     </div>
 </div>
+
+<!-- Structured Data for Collection -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Indonesian Miniature Trains Collection",
+    "description": "Comprehensive collection of Indonesian miniature trains with detailed information and specifications",
+    "url": "https://railfans.info/",
+    "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+            {% for miniature in miniatures %}
+            {
+                "@type": "ListItem",
+                "position": {{ forloop.counter }},
+                "item": {
+                    "@type": "Product",
+                    "name": "{{ miniature.name }}",
+                    "description": "{{ miniature.article|truncatewords:30 }}",
+                    "category": "{{ miniature.category }}",
+                    "url": "https://railfans.info{% url 'miniature_detail' miniature.slug %}"
+                }
+            }{% if not forloop.last %},{% endif %}
+            {% endfor %}
+        ]
+    }
+}
+</script>
 {% endblock %} 

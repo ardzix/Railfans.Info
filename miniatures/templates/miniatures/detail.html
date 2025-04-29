@@ -1,6 +1,18 @@
 {% extends "base.html" %}
 
-{% block title %}{{ miniature.name }} - Indonesian Miniature Trains{% endblock %}
+{% block title %}{{ miniature.name }} - Indonesian Miniature Train | Railfans.info{% endblock %}
+
+{% block meta_title %}{{ miniature.name }} - Detailed Information & Specifications | Railfans.info{% endblock %}
+
+{% block meta_description %}Explore detailed information about {{ miniature.name }}, a {{ miniature.category }} from {{ miniature.year_of_production }}. Includes specifications, history, and high-quality images.{% endblock %}
+
+{% block og_title %}{{ miniature.name }} - Indonesian Miniature Train | Railfans.info{% endblock %}
+
+{% block og_description %}Detailed information about {{ miniature.name }}, a {{ miniature.category }} from {{ miniature.year_of_production }}. Includes specifications, history, and gallery.{% endblock %}
+
+{% block og_image %}{% if miniature.main_image %}{{ miniature.main_image.url }}{% elif miniature.thumbnail %}{{ miniature.thumbnail.url }}{% else %}https://railfans.info/static/images/og-image.jpg{% endif %}{% endblock %}
+
+{% block canonical_url %}https://railfans.info{% url 'miniature_detail' miniature.slug %}{% endblock %}
 
 {% block content %}
 <div class="space-y-10">
@@ -374,5 +386,66 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+</script>
+
+<!-- Structured Data for Product -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "{{ miniature.name }}",
+    "description": "{{ miniature.article|truncatewords:50 }}",
+    "category": "{{ miniature.category }}",
+    "url": "https://railfans.info{% url 'miniature_detail' miniature.slug %}",
+    "image": [
+        {% if miniature.main_image %}"{{ miniature.main_image.url }}"{% endif %}
+        {% if miniature.thumbnail %}{% if miniature.main_image %},{% endif %}"{{ miniature.thumbnail.url }}"{% endif %}
+        {% for image in miniature.gallery_images.all %}{% if forloop.first %}{% if miniature.main_image or miniature.thumbnail %},{% endif %}{% else %},{% endif %}"{{ image.image.url }}"{% endfor %}
+    ],
+    "additionalProperty": [
+        {
+            "@type": "PropertyValue",
+            "name": "Era/Livery",
+            "value": "{{ miniature.era_livery }}"
+        },
+        {
+            "@type": "PropertyValue",
+            "name": "Year of Production",
+            "value": "{{ miniature.year_of_production }}"
+        }
+    ],
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://railfans.info{% url 'miniature_detail' miniature.slug %}"
+    }
+}
+</script>
+
+<!-- Breadcrumb Structured Data -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://railfans.info/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ miniature.category }}",
+            "item": "https://railfans.info/?category={{ miniature.category }}"
+        },
+        {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ miniature.name }}",
+            "item": "https://railfans.info{% url 'miniature_detail' miniature.slug %}"
+        }
+    ]
+}
 </script>
 {% endblock %} 
