@@ -14,12 +14,9 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     libffi-dev \
     supervisor \
-    nginx \
     curl \
     && apt-get clean && rm -rf /var/lib/apt/lists/* 
 
-# Create necessary directories
-RUN mkdir -p /usr/src/app/static /usr/src/app/media /var/log/uwsgi /var/log/nginx
 
 # Copy the requirements file into the container
 COPY requirements.txt /usr/src/app/
@@ -38,11 +35,9 @@ ENV PYTHONPATH=/usr/src/app
 RUN python manage.py collectstatic --noinput
 
 # Set proper permissions
-RUN chown -R www-data:www-data /usr/src/app /var/log/uwsgi /var/log/nginx
+RUN chown -R www-data:www-data /usr/src/app /var/log/uwsgi
 RUN chmod -R 755 /usr/src/app
 
-# Copy nginx configuration
-COPY nginx.conf /etc/nginx/nginx.conf
 
 # Expose port for uWSGI/Django
 EXPOSE 8001
