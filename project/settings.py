@@ -145,9 +145,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = os.getenv('DJANGO_STATIC_ROOT', os.path.join(BASE_DIR, 'staticfiles'))
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 # Media files
 USE_S3 = os.getenv('USE_S3', 'False').lower() == 'true'
@@ -163,20 +160,13 @@ if USE_S3:
     AWS_S3_FILE_OVERWRITE = os.getenv('AWS_S3_FILE_OVERWRITE', 'False').lower() == 'true'
     AWS_QUERYSTRING_AUTH = os.getenv('AWS_QUERYSTRING_AUTH', 'True').lower() == 'true'
     
-    # Additional S3 Settings
-    AWS_S3_OBJECT_PARAMETERS = {
-        'CacheControl': 'max-age=86400',
-    }
-    AWS_IS_GZIPPED = True
+    # S3 Static Settings
+    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+    STATIC_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/static/'
 
-    # Storage Settings
-    STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+    # S3 Media Settings
     DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-    # URLs
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_S3_ENDPOINT_URL.split('://')[1]}/{AWS_STORAGE_BUCKET_NAME}"
-    STATIC_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
-    MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+    MEDIA_URL = f'{AWS_S3_ENDPOINT_URL}/{AWS_STORAGE_BUCKET_NAME}/media/'
 else:
     # Local Storage Settings
     MEDIA_URL = '/media/'
